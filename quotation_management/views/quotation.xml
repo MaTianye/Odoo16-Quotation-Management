@@ -1,0 +1,50 @@
+<odoo>
+    <!-- View Definition -->
+    <record model="ir.ui.view" id="quotation_management.tree">
+        <field name="name">quotation_management.Quotations.tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                    <button name="action_open_quotations_info_wizard" type="object" string="More Quotation Information" class="oe_highlight"/>
+                </header>
+                <field name="mpn"/>
+                <field name="supplier_ids"/>
+                <field name="description"/>
+                <field name="price"/>
+                <field name="available_units"/>
+                <field name="quotation_ids"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action Definition -->
+    <record model="ir.actions.act_window" id="quotation_management.action_window">
+        <field name="name">Quotations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">quotation.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item Definition -->
+    <menuitem name="Quotations" id="quotation_management.quotations" action="quotation_management.action_window" parent="quotation_management.Manager" sequence="10"/>
+
+    <!-- Quotations Info Wizard View Definition -->
+    <record id="view_quotations_info_wizard_form" model="ir.ui.view">
+        <field name="name">quotations.info.wizard.form</field>
+        <field name="model">quotations.info.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quotation Information">
+                <group>
+                    <field name="Info_mpn"/>
+                    <field name="all_suppliers"/>
+                    <field name="latest_price"/>
+                    <field name="all_quotationIDs"/>
+                </group>
+                <footer>
+                    <button string="Close" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

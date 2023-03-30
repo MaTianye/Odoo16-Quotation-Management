@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="Quotation Management"
+              id="quotation_management.menu_root"
+              sequence="10"/>
+
+    <!-- menu categories -->
+    <menuitem name="Manager"
+              id="quotation_management.Manager"
+              parent="quotation_management.menu_root"
+              sequence="10"/>
+</odoo>
